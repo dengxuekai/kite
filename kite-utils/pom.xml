@@ -8,7 +8,7 @@
         <artifactId>kite-dependencies</artifactId>
         <groupId>com.dxk</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../kite-dependencies/pom.xml</relativePath>
+        <relativePath>../kite-parent/pom.xml</relativePath>
     </parent>
 
     <artifactId>kite-utils</artifactId>

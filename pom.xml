@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>kite-dependencies</module>
         <module>kite-utils</module>
         <module>kite-parent</module>
         <module>kite-redis</module>

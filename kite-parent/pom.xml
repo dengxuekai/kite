@@ -2,22 +2,129 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <parent>
-        <artifactId>kite-dependencies</artifactId>
-        <groupId>com.dxk</groupId>
-        <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../kite-dependencies/pom.xml</relativePath>
-    </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.1.5.RELEASE</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
+    <groupId>com.dxk</groupId>
     <artifactId>kite-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-        </dependency>
-    </dependencies>
+    <name>kite-dependencies</name>
+    <description>Demo project for Spring Boot</description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <commons-lang3.version>3.8.1</commons-lang3.version>
+        <hessian.version>4.0.51</hessian.version>
+        <fastjson.version>1.2.47</fastjson.version>
+        <kite.version>0.0.1-SNAPSHOT</kite.version>
+        <commons.collections.version>3.2.2</commons.collections.version>
+        <lombok.version>1.16.6</lombok.version>
+        <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
+        <dubbo-springboot.version>0.2.0</dubbo-springboot.version>
+        <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- kite start -->
+            <dependency>
+                <groupId>com.dxk</groupId>
+                <artifactId>kite-utils</artifactId>
+                <version>${kite.version}</version>
+            </dependency>
+
+            <!-- kite end -->
+
+            <!-- 3 party start -->
+            <dependency>
+                <groupId>com.caucho</groupId>
+                <artifactId>hessian</artifactId>
+                <version>${hessian.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-collections</groupId>
+                <artifactId>commons-collections</artifactId>
+                <version>${commons.collections.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>2.9.7</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-feign</artifactId>
+                <version>1.4.6.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-springboot.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>de.codecentric</groupId>
+                <artifactId>spring-boot-admin-dependencies</artifactId>
+                <version>${spring-boot-admin.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 3 party end -->
+        </dependencies>
+    </dependencyManagement>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
+    <!-- 私有仓库 -->
+    <!--    <distributionManagement>-->
+    <!--        <repository>-->
+    <!--            <id>releases</id>&lt;!&ndash;这个ID需要与你的release仓库的Repository ID一致&ndash;&gt;-->
+    <!--            <url>http://10.246.84.25:8081/nexus/content/repositories/releases</url>-->
+    <!--        </repository>-->
+    <!--        <snapshotRepository>-->
+    <!--            <id>snapshots</id>&lt;!&ndash;这个ID需要与你的snapshots仓库的Repository ID一致&ndash;&gt;-->
+    <!--            <url>http://10.246.84.25:8081/nexus/content/repositories/snapshots</url>-->
+    <!--        </snapshotRepository>-->
+    <!--    </distributionManagement>-->
+
 
 </project>
