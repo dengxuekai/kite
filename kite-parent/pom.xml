@@ -32,8 +32,10 @@
         <commons.collections.version>3.2.2</commons.collections.version>
         <lombok.version>1.16.6</lombok.version>
         <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
-        <dubbo-springboot.version>0.2.0</dubbo-springboot.version>
+        <dubbo-spring-boot.version>0.2.0</dubbo-spring-boot.version>
         <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
+        <jackson-databind.version>2.9.8</jackson-databind.version>
+        <spring-cloud-starter-feign.version>1.4.6.RELEASE</spring-cloud-starter-feign.version>
     </properties>
 
     <dependencyManagement>
@@ -78,17 +80,17 @@
             <dependency>
                 <groupId>com.fasterxml.jackson.core</groupId>
                 <artifactId>jackson-databind</artifactId>
-                <version>2.9.7</version>
+                <version>${jackson-databind.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-starter-feign</artifactId>
-                <version>1.4.6.RELEASE</version>
+                <version>${spring-cloud-starter-feign.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.alibaba.boot</groupId>
                 <artifactId>dubbo-spring-boot-starter</artifactId>
-                <version>${dubbo-springboot.version}</version>
+                <version>${dubbo-spring-boot.version}</version>
             </dependency>
 
             <dependency>
