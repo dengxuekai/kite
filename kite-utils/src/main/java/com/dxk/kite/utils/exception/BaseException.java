@@ -11,28 +11,17 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = true)
 public class BaseException extends RuntimeException {
 
-    private int status;
-    private Object[] args;
+    private int code;
+    private String message;
 
     public BaseException() {
-        this(-1);
+        super();
     }
 
-    public BaseException(int status) {
-        this(status, null);
+    public BaseException(int code, String message) {
+        super();
+        this.setCode(code);
+        this.setMessage(message);
     }
 
-    public BaseException(int status, String message) {
-        super(message);
-        this.status = status;
-    }
-
-    public BaseException(Throwable cause) {
-        super(cause);
-    }
-
-    public BaseException(int status, String message, Throwable cause) {
-        super(message, cause);
-        this.status = status;
-    }
 }

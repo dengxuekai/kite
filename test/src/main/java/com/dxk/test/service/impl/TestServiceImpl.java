@@ -1,6 +1,9 @@
 package com.dxk.test.service.impl;
 
 import com.dxk.kite.redis.service.RedisService;
+import com.dxk.kite.rpc.annotation.ReturnExceptionResult;
+import com.dxk.kite.utils.exception.BaseException;
+import com.dxk.kite.utils.result.Result;
 import com.dxk.test.model.Student;
 import com.dxk.test.service.TestService;
 import org.springframework.stereotype.Service;
@@ -32,4 +35,11 @@ public class TestServiceImpl implements TestService {
 	public Student getStudent(String key) {
 		return (Student) redisService.get(key);
 	}
+
+	@Override
+	@ReturnExceptionResult
+	public Result exception() {
+		throw new BaseException(1234, "自定义异常");
+	}
+
 }

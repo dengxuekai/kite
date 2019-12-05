@@ -1,5 +1,6 @@
 package com.dxk.test.service;
 
+import com.dxk.kite.utils.result.Result;
 import com.dxk.test.model.Student;
 
 /**
@@ -8,9 +9,11 @@ import com.dxk.test.model.Student;
  */
 public interface TestService {
 
-	String setAndGet(String key, String value);
+    String setAndGet(String key, String value);
 
-	boolean setStudent(String key, Student student);
+    boolean setStudent(String key, Student student);
 
-	Student getStudent(String key);
+    Student getStudent(String key);
+
+    Result<Boolean> exception();
 }
