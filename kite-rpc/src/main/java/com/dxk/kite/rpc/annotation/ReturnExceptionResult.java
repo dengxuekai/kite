@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
  * @Date 2019-11-28 14:37
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD, ElementType.TYPE})
+@Target({ElementType.METHOD})
 public @interface ReturnExceptionResult {
 
     String value() default "";
