@@ -1,4 +1,4 @@
-package com.dxk.kite.utils.exception;
+package com.dxk.kite.common.exception;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;

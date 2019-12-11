@@ -1,4 +1,4 @@
-package com.dxk.kite.utils.exception;
+package com.dxk.kite.common.exception;
 
 /**
  * @Author dengxuekai

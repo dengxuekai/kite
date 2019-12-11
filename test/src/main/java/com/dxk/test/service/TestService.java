@@ -1,6 +1,6 @@
 package com.dxk.test.service;
 
-import com.dxk.kite.utils.result.Result;
+import com.dxk.kite.common.model.Result;
 import com.dxk.test.model.Student;
 
 /**

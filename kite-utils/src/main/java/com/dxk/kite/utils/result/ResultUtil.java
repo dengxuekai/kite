@@ -1,7 +1,8 @@
-package com.dxk.kite.utils;
+package com.dxk.kite.utils.result;
 
-import com.dxk.kite.utils.exception.Code;
-import com.dxk.kite.utils.result.Result;
+
+import com.dxk.kite.common.exception.Code;
+import com.dxk.kite.common.model.Result;
 
 /**
  * @author hzdengxuekai

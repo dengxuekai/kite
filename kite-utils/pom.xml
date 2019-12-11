@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>kite-dependencies</artifactId>
+        <artifactId>kite-parent</artifactId>
         <groupId>com.dxk</groupId>
         <version>0.0.1-SNAPSHOT</version>
         <relativePath>../kite-parent/pom.xml</relativePath>
@@ -15,18 +15,7 @@
     <packaging>jar</packaging>
 
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <java.version>1.8</java.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <commons-lang3.version>3.7</commons-lang3.version>
-        <hessian.version>4.0.51</hessian.version>
-        <fastjson.version>1.2.47</fastjson.version>
-        <kite.version>0.0.1-SNAPSHOT</kite.version>
-        <commons.collections.version>3.2.2</commons.collections.version>
-        <lombok.version>1.16.6</lombok.version>
-        <httpclient.version>4.5.5</httpclient.version>
+
     </properties>
 
     <dependencies>
@@ -45,6 +34,16 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ma.glasnost.orika</groupId>
+            <artifactId>orika-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dxk</groupId>
+            <artifactId>kite-common</artifactId>
         </dependency>
     </dependencies>
 

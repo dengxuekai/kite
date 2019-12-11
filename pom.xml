@@ -15,6 +15,7 @@
         <module>kite-redis</module>
         <module>test</module>
         <module>kite-rpc</module>
+        <module>kite-common</module>
     </modules>
 
 </project>

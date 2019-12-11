@@ -28,7 +28,6 @@
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <hessian.version>4.0.51</hessian.version>
         <fastjson.version>1.2.47</fastjson.version>
-        <kite.version>0.0.1-SNAPSHOT</kite.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <lombok.version>1.16.6</lombok.version>
         <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
@@ -36,6 +35,9 @@
         <spring-boot-admin.version>2.1.5</spring-boot-admin.version>
         <jackson-databind.version>2.9.8</jackson-databind.version>
         <spring-cloud-starter-feign.version>1.4.6.RELEASE</spring-cloud-starter-feign.version>
+        <spring-boot-starter-aop.version>2.1.5.RELEASE</spring-boot-starter-aop.version>
+        <validation-api.version>2.0.1.Final</validation-api.version>
+        <orika-core.version>1.5.2</orika-core.version>
     </properties>
 
     <dependencyManagement>
@@ -43,8 +45,23 @@
             <!-- kite start -->
             <dependency>
                 <groupId>com.dxk</groupId>
+                <artifactId>kite-common</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dxk</groupId>
+                <artifactId>kite-redis</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dxk</groupId>
+                <artifactId>kite-rpc</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.dxk</groupId>
                 <artifactId>kite-utils</artifactId>
-                <version>${kite.version}</version>
+                <version>${project.version}</version>
             </dependency>
 
             <!-- kite end -->
@@ -99,6 +116,29 @@
                 <version>${spring-boot-admin.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-aop</artifactId>
+                <version>${spring-boot-starter-aop.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.validation</groupId>
+                <artifactId>validation-api</artifactId>
+                <version>${validation-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ma.glasnost.orika</groupId>
+                <artifactId>orika-core</artifactId>
+                <version>${orika-core.version}</version>
             </dependency>
 
             <!-- 3 party end -->

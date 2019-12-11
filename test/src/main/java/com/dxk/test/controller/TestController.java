@@ -1,8 +1,7 @@
 package com.dxk.test.controller;
 
 import com.dxk.kite.rpc.annotation.MethodInOutLog;
-import com.dxk.kite.utils.ResultUtil;
-import com.dxk.kite.utils.result.Result;
+import com.dxk.kite.common.model.Result;
 import com.dxk.test.controller.param.BaseParam;
 import com.dxk.test.model.Student;
 import com.dxk.test.service.TestService;

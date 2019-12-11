@@ -1,4 +1,4 @@
-package com.dxk.kite.utils.result;
+package com.dxk.kite.common.model;
 
 import lombok.Data;
 

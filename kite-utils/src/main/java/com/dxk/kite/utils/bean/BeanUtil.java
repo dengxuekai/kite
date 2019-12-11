@@ -1,6 +1,7 @@
-package com.dxk.kite.utils;
+package com.dxk.kite.utils.bean;
 
 
+import com.dxk.kite.utils.result.ResultUtil;
 import org.apache.commons.collections.CollectionUtils;
 
 import java.lang.reflect.Field;
