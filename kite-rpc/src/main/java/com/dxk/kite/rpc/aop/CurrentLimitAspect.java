@@ -24,7 +24,7 @@ import java.util.concurrent.Semaphore;
 @Component
 public class CurrentLimitAspect {
 
-    @Value("${current.limit.number:2}")
+    @Value("${current.limit.number:500}")
     private Integer currentLimitNumber;
 
     private Semaphore semaphore;
