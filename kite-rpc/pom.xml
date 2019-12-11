@@ -39,6 +39,12 @@
             <groupId>com.dxk</groupId>
             <artifactId>kite-utils</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

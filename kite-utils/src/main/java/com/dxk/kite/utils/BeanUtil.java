@@ -34,6 +34,7 @@ public class BeanUtil {
                 map.put(field.getName(), o);
             }
         }
+        ResultUtil.genResult(1, "ss", "ss");
         return map;
     }
 

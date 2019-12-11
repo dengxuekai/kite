@@ -16,4 +16,6 @@ public interface TestService {
     Student getStudent(String key);
 
     Result<Boolean> exception();
+
+    Result<Boolean> limit(Student student, Integer status);
 }

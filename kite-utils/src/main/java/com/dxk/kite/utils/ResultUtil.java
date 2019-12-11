@@ -1,5 +1,6 @@
 package com.dxk.kite.utils;
 
+import com.dxk.kite.utils.exception.Code;
 import com.dxk.kite.utils.result.Result;
 
 /**
@@ -12,12 +13,12 @@ public class ResultUtil {
      * 生成结果
      *
      * @param code
-     * @param message
+     * @param msg
      * @param data
      * @return
      */
-    public static Result<Object> genResult(int code, String message, Object data) {
-        return new Result<>(code, message, data);
+    public static <T> Result<T> genResult(int code, String msg, T data) {
+        return new Result<>(code, msg, data);
     }
 
     /**
@@ -26,7 +27,7 @@ public class ResultUtil {
      * @param data
      * @return
      */
-    public static Result<Object> genResultWhitSuccess(Object data) {
+    public static <T> Result<T> genResultWhitSuccess(T data) {
         return new Result<>(data);
     }
 
@@ -34,11 +35,32 @@ public class ResultUtil {
      * 生成异常结果
      *
      * @param code
-     * @param message
+     * @param msg
      * @return
      */
-    public static Result genResultWhitError(int code, String message) {
-        return new Result<>(code, message);
+    public static Result genResultWhitError(int code, String msg) {
+        return new Result<>(code, msg);
+    }
+
+    /**
+     * 生成异常结果
+     *
+     * @param code
+     * @return
+     */
+    public static Result genResultWhitError(Code code) {
+        return new Result<>(code.getCode(), code.getMsg());
+    }
+
+    /**
+     * 生成异常结果
+     *
+     * @param code
+     * @param data
+     * @return
+     */
+    public static <T> Result<T> genResultWhitError(int code, T data) {
+        return new Result<>(code, data);
     }
 
     /**
@@ -48,7 +70,7 @@ public class ResultUtil {
      * @return
      */
     public static Boolean isSuccess(Result result) {
-        return !(result == null || result.getCode() != Result.SUCCESS);
+        return result != null && result.getCode() == Result.SUCCESS;
     }
 
     /**
@@ -58,6 +80,6 @@ public class ResultUtil {
      * @return
      */
     public static Boolean isFailed(Result result) {
-        return result == null || result.getCode() != Result.SUCCESS;
+        return !isSuccess(result);
     }
 }

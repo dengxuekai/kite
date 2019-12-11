@@ -1,42 +1,49 @@
 package com.dxk.kite.utils.result;
 
-import com.dxk.kite.utils.dto.BaseDTO;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
+
+import java.io.Serializable;
 
 /**
  * @author hzdengxuekai
  * @date 2018/7/12 16:47
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-public class Result<T> extends BaseDTO {
+public class Result<T> implements Serializable {
 
     public static final int SUCCESS = 0;
 
     private int code;
-    private String message;
+    private String msg;
     private T data;
 
     public Result() {
         super();
     }
 
-    public Result(Integer code, String message) {
+    public Result(T data) {
+        this.code = SUCCESS;
+        this.msg = "";
+        this.data = data;
+    }
+
+    public Result(Integer code, String msg) {
         this.code = code;
-        this.message = message;
+        this.msg = msg;
         this.data = null;
     }
 
-    public Result(Integer code, String message, T data) {
+    public Result(Integer code, T data) {
         this.code = code;
-        this.message = message;
+        this.msg = null;
         this.data = data;
     }
 
-    public Result(T data) {
-        this.code = SUCCESS;
-        this.message = "";
+    public Result(Integer code, String msg, T data) {
+        this.code = code;
+        this.msg = msg;
         this.data = data;
     }
+
+
 }

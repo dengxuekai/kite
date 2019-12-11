@@ -2,6 +2,7 @@ package com.dxk.kite.rpc.aop;
 
 import com.dxk.kite.utils.ResultUtil;
 import com.dxk.kite.utils.exception.BaseException;
+import com.dxk.kite.utils.exception.BaseExceptionCode;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -20,7 +21,7 @@ import java.util.Set;
  */
 @Slf4j
 @Aspect
-@Order(0)
+@Order(1)
 @Component
 public class ReturnExceptionAspect {
 
@@ -44,14 +45,14 @@ public class ReturnExceptionAspect {
             Set<ConstraintViolation<?>> constraintViolations = cve.getConstraintViolations();
             ConstraintViolation<?> cv = constraintViolations.iterator().next();
             log.info("RPC参数异常:{}", cv.getMessage());
-            return ResultUtil.genResultWhitError(400, cv.getMessage());
+            return ResultUtil.genResultWhitError(BaseExceptionCode.PARAM_ERROR.getCode(), cv.getMessage());
         } catch (BaseException be) {
             log.info("RPC业务异常,code:{}, msg:{}", be.getCode(), be.getMessage());
             return ResultUtil.genResultWhitError(be.getCode(), be.getMessage());
         } catch (Throwable throwable) {
             log.error("系统异常:");
             throwable.printStackTrace();
-            return ResultUtil.genResultWhitError(500, "系统异常");
+            return ResultUtil.genResultWhitError(BaseExceptionCode.SYSTEM_ERROR);
         }
     }
 }

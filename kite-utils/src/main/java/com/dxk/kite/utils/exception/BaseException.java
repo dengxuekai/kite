@@ -12,16 +12,22 @@ import lombok.EqualsAndHashCode;
 public class BaseException extends RuntimeException {
 
     private int code;
-    private String message;
+    private String msg;
 
     public BaseException() {
         super();
     }
 
-    public BaseException(int code, String message) {
+    public BaseException(int code, String msg) {
         super();
         this.setCode(code);
-        this.setMessage(message);
+        this.setMsg(msg);
+    }
+
+    public BaseException(Code code) {
+        super();
+        this.setCode(code.getCode());
+        this.setMsg(code.getMsg());
     }
 
 }
