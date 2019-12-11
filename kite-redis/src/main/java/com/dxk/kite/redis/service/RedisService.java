@@ -1,27 +1,51 @@
 package com.dxk.kite.redis.service;
 
-import java.util.List;
-
 /**
  * @author hzdengxuekai
  * @date 2018/12/3 17:26
  */
 public interface RedisService {
 
-	/**
-	 * 写入缓存
-	 *
-	 * @param key
-	 * @param value
-	 * @return
-	 */
-	boolean set(String key, Object value);
+    /**
+     * 写入缓存
+     *
+     * @param key
+     * @param value
+     * @return
+     */
+    <T> boolean set(String key, T value);
 
-	/**
-	 *
-	 * @param key
-	 * @return
-	 */
-	Object get(String key);
+    /**
+     * 获取缓存
+     *
+     * @param key
+     * @return
+     */
+    <T> T get(String key);
+
+    /**
+     * 删除缓存
+     *
+     * @param key
+     * @return
+     */
+    boolean remove(String key);
+
+    /**
+     * 加分布式锁
+     *
+     * @param key
+     * @param expire
+     * @return
+     */
+    boolean lock(String key, long expire);
+
+    /**
+     * 释放分布式锁
+     *
+     * @param key
+     * @return
+     */
+    boolean unLock(String key);
 
 }

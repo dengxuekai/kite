@@ -26,7 +26,7 @@ public class TestServiceImpl implements TestService {
 	@Override
 	public String setAndGet(String key, String value) {
 		redisService.set(key, value);
-		return (String) redisService.get(key);
+		return redisService.get(key);
 	}
 
 	@Override
@@ -36,7 +36,7 @@ public class TestServiceImpl implements TestService {
 
 	@Override
 	public Student getStudent(String key) {
-		return (Student) redisService.get(key);
+		return redisService.get(key);
 	}
 
 	@Override
