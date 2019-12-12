@@ -39,7 +39,7 @@ public class ResultUtil {
      * @param msg
      * @return
      */
-    public static Result genResultWhitError(int code, String msg) {
+    public static <T> Result<T> genResultWhitError(int code, String msg) {
         return new Result<>(code, msg);
     }
 
@@ -49,7 +49,7 @@ public class ResultUtil {
      * @param code
      * @return
      */
-    public static Result genResultWhitError(Code code) {
+    public static <T> Result<T> genResultWhitError(Code code) {
         return new Result<>(code.getCode(), code.getMsg());
     }
 

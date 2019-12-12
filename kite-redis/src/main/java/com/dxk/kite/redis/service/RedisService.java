@@ -38,7 +38,7 @@ public interface RedisService {
      * @param expire
      * @return
      */
-    boolean lock(String key, long expire);
+    boolean tryLock(String key, long expire);
 
     /**
      * 释放分布式锁

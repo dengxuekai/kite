@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Aspect
-@Order(2)
+@Order(1)
 @Component
 public class MethodInOutLogAspect {
 
@@ -25,7 +25,7 @@ public class MethodInOutLogAspect {
 
     @Around(value = "methodInOutLog()")
     public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
-        String method = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
+        String method = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName()+ "()";
         log.info("{}入参:{}", method, JSONObject.toJSONString(joinPoint.getArgs()));
         Object obj = joinPoint.proceed();
         log.info("{}出参:{}", method, JSONObject.toJSONString(obj));

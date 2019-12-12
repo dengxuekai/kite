@@ -38,6 +38,7 @@
         <spring-boot-starter-aop.version>2.1.5.RELEASE</spring-boot-starter-aop.version>
         <validation-api.version>2.0.1.Final</validation-api.version>
         <orika-core.version>1.5.2</orika-core.version>
+        <redisson.version>3.10.5</redisson.version>
     </properties>
 
     <dependencyManagement>
@@ -139,6 +140,12 @@
                 <groupId>ma.glasnost.orika</groupId>
                 <artifactId>orika-core</artifactId>
                 <version>${orika-core.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson </artifactId>
+                <version>${redisson.version}</version>
             </dependency>
 
             <!-- 3 party end -->

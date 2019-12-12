@@ -1,5 +1,6 @@
 package com.dxk.test.service.impl;
 
+import com.dxk.kite.common.exception.BaseExceptionCode;
 import com.dxk.kite.redis.service.RedisService;
 import com.dxk.kite.rpc.annotation.CurrentLimit;
 import com.dxk.kite.rpc.annotation.MethodInOutLog;
@@ -9,6 +10,7 @@ import com.dxk.kite.common.exception.BaseException;
 import com.dxk.kite.common.model.Result;
 import com.dxk.test.model.Student;
 import com.dxk.test.service.TestService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -51,6 +53,25 @@ public class TestServiceImpl implements TestService {
 	@ReturnExceptionResult
 	public Result<Boolean> limit(Student student, Integer status) {
 		return ResultUtil.genResultWhitSuccess(true);
+	}
+
+	@Override
+	@ReturnExceptionResult
+	public Result<Boolean> submitOrder(Student student) {
+		String key = "locks";
+		boolean lock = redisService.tryLock(key, 10);
+		if (lock) {
+			try {
+				Thread.sleep(9000);
+				return ResultUtil.genResultWhitSuccess(true);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+				throw new BaseException(BaseExceptionCode.SYSTEM_ERROR);
+			} finally {
+				redisService.unLock(key);
+			}
+		}
+		throw new BaseException(BaseExceptionCode.NOT_LOCKED);
 	}
 
 }

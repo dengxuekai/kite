@@ -42,6 +42,11 @@
             <artifactId>fastjson</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.dxk</groupId>
+            <artifactId>kite-redis</artifactId>
+        </dependency>
+
     </dependencies>
 
 </project>

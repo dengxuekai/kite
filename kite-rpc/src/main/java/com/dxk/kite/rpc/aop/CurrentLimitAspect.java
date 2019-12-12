@@ -49,7 +49,7 @@ public class CurrentLimitAspect {
                 current.release();
             }
         } else {
-            String method = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName();
+            String method = joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName()+ "()";
             log.warn("超过系统并发限流上限{}, 方法:{}", currentLimitNumber, method);
             return ResultUtil.genResultWhitError(BaseExceptionCode.OVER_CURRENT_LIMIT);
         }

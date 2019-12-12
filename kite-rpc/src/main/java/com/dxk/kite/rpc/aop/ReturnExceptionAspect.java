@@ -21,7 +21,7 @@ import java.util.Set;
  */
 @Slf4j
 @Aspect
-@Order(1)
+@Order(2)
 @Component
 public class ReturnExceptionAspect {
 
@@ -47,8 +47,8 @@ public class ReturnExceptionAspect {
             log.info("RPC参数异常:{}", cv.getMessage());
             return ResultUtil.genResultWhitError(BaseExceptionCode.PARAM_ERROR.getCode(), cv.getMessage());
         } catch (BaseException be) {
-            log.info("RPC业务异常,code:{}, msg:{}", be.getCode(), be.getMessage());
-            return ResultUtil.genResultWhitError(be.getCode(), be.getMessage());
+            log.info("RPC业务异常,code:{}, msg:{}", be.getCode(), be.getMsg());
+            return ResultUtil.genResultWhitError(be.getCode(), be.getMsg());
         } catch (Throwable throwable) {
             log.error("系统异常:");
             throwable.printStackTrace();

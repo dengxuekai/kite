@@ -18,4 +18,6 @@ public interface TestService {
     Result<Boolean> exception();
 
     Result<Boolean> limit(Student student, Integer status);
+
+    Result<Boolean> submitOrder(Student student);
 }
