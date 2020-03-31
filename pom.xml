@@ -16,6 +16,7 @@
         <module>test</module>
         <module>kite-rpc</module>
         <module>kite-common</module>
+        <module>kite-web</module>
     </modules>
 
 </project>

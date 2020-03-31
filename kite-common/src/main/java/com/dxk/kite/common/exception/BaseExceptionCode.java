@@ -11,6 +11,7 @@ public enum BaseExceptionCode implements Code {
     OVER_CURRENT_LIMIT(100002, "超过接口限流数"),
     NOT_LOCKED(100003, "未获取到分布式锁"),
     JOB_MUST_RETURN_BOOLEAN(100004, "定时任务必须返回布尔类型"),
+    NONE_LOGIN_INFO(100005, "无登录信息"),
 
     ;
     private final int code;

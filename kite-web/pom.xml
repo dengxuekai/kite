@@ -6,18 +6,30 @@
         <artifactId>kite-parent</artifactId>
         <groupId>com.dxk</groupId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath>../kite-parent/pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>kite-common</artifactId>
-    <packaging>jar</packaging>
+    <artifactId>kite-web</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-    </dependencies>
 
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.dxk</groupId>
+            <artifactId>kite-common</artifactId>
+        </dependency>
+    </dependencies>
 </project>
