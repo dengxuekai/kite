@@ -27,7 +27,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <commons-lang3.version>3.8.1</commons-lang3.version>
         <hessian.version>4.0.51</hessian.version>
-        <fastjson.version>1.2.47</fastjson.version>
+        <fastjson.version>1.2.83</fastjson.version>
         <commons.collections.version>3.2.2</commons.collections.version>
         <lombok.version>1.16.6</lombok.version>
         <spring.cloud.version>Greenwich.SR1</spring.cloud.version>
